@@ -8028,6 +8028,9 @@ MovesetsPage.Back.Activated:Connect(function()
 	end)
 end)
 local DancesPage = UI.CreateItemListPage()
+UI.CreateSlider(MainPage,"dance volume",UISound.DanceMusic.Volume,0,100,0.01).Changed:Connect(function(val)
+	UISound.DanceMusic:SetAttribute("Volume", val)
+end)
 DancesPage.ZIndex = 1
 DancesPage.Position = UDim2.new(0.5, 360, 0.5, 0)
 DancesPage.Interactable = false
