@@ -6080,7 +6080,7 @@ function HatReanimator.Start()
 		HRPTP = function(dt, character, Humanoid, RootPosition, RootPart, readystate)
 			if Humanoid.RigType == Enum.HumanoidRigType.R15 then
 				--Player.Character.Humanoid:ChangeState(16)
-				RootPart.CFrame = CFrame.new(RootPosition + Vector3.new(0, -.25, 0)) * CFrame.Angles(math.rad(20), 0, 0)
+				RootPart.CFrame = CFrame.new(RootPosition + Vector3.new(0, -.25, 0)) * CFrame.Angles(math.rad(0), 0, 0)
 			else
 				--Player.Character.Humanoid:ChangeState(16)
 				RootPart.CFrame = CFrame.new(RootPosition + Vector3.new(0, -.8, 0))
@@ -6092,13 +6092,14 @@ function HatReanimator.Start()
 			anim.AnimationId = "rbxassetid://180436148"
 			if Humanoid.RigType == Enum.HumanoidRigType.R15 then
 				anim.AnimationId = "rbxassetid://507767968"
+				--anim.AnimationId = "rbxassetid://10921262864"
 			end
 			local track = Humanoid:LoadAnimation(anim)
 			track.Priority = 5
 			track:Play(0)
 			track:AdjustSpeed(1)
 			track:AdjustWeight(1)
-			track.TimePosition = 0.1
+			track.TimePosition = 0.5
 			table.clear(shownapehatdrop_lock)
 			for _,v in hats do
 				table.insert(shownapehatdrop_lock, v.Changed:Connect(function(p)
@@ -9682,7 +9683,7 @@ local d = function()
 			end
 		end
 	end
-	pcall(avastantivirus, "", {})
+	--pcall(avastantivirus, "", {})
 	if megadetected then
 		task.wait(1.5)
 		Util.UINotify("i ratted you mother fucker")
